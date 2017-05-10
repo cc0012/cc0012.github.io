@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html><head>
+    <meta http-equiv="Content-type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>cc0012</title>
+    <link rel="stylesheet" href="css/index.css">
+    <script src="jquery.min.js"></script>
+  </head>
+
+  <body>
+
+
+
+<div class="main-wrapper">
+
+  <header>
+  <div class="menu">
+    <ul>
+  <li><a href="#art" class="sliding-u-l-r">ART</a></li>
+  <li><a href="#about" class="sliding-u-l-r">ABOUT</a></li>
+  <li><a href="mailto:camille0@protonmail.com" class="sliding-u-l-r">CONTACT</a></li>
+  </ul>
+  </div>
+  </header>
+
+    <div class="container">
+<br>
+      <h1 id="title">cc0012</h1>
+      <p id="about"><strong>Junior developer with 10 months of professional experience and an interest in both front and back-end web development</strong></p><br><br>
+
+<img src="13.jpg" class="thumbnail">
+
+<br><br>
+
+<p>HTML5 / CSS3 : 3 / 5<br>
+SQL : 3 / 5<br>
+U.I. : 2,5 / 5<br>
+C# : 1,5 / 5<br>
+RUBY ON RAILS : 1,5 / 5<br>
+JS : 1,5 / 5<br><br>
+
+Here are some of the technologies that I've used : databases (MySQL/MSSQL), back-end Javascript (Node.js), MVC frameworks (Rails, Express), CSS pre-processors (SCSS), automation (Grunt).<br><br>
+
+
+        Write me an
+        <a href="mailto:camille0@protonmail.com">e-mail</a>
+        if you want to get in touch with me!</p><br><br id="art">
+
+
+
+
+
+<pre><code>
+        using System;
+        using System.Collections.Generic;
+        using System.Linq;
+        using System.Text;
+        using System.Threading.Tasks;
+
+        namespace ConsoleApplication1
+        {
+            class Program
+            {
+                static void Main(string[] args)
+                {
+                    // Deklaration von Variablen
+                    double Bruttopreis;
+                    double Mehrwertsteuer;
+                    string eingabe;
+
+                    // Eingabe von dem Bruttopreis
+                    Console.Write("Bruttopreis (in Euros): ");
+                    eingabe = Console.ReadLine();
+                    Bruttopreis = Convert.ToInt32(eingabe);
+
+                    //Berechnungen
+                    Mehrwertsteuer = 0.19 * Bruttopreis;
+
+                    //Ausgabe
+                    Console.WriteLine("Mehrwertsteuer = " + Mehrwertsteuer + " Euros");
+
+                    Console.Read();
+                }
+            }
+        }
+
+        using System;
+        using System.Collections.Generic;
+        using System.Linq;
+        using System.Text;
+        using System.Threading.Tasks;
+
+        namespace ConsoleApplication1
+        {
+            class Program
+            {
+                static void Main(string[] args)
+                {
+                    // Deklaration von Variablen
+                    double Radius;
+                    double Umfang;
+                    double Oberflaeche;
+                    double Volumen;
+                    string eingabe;
+
+                    // Eingabe von Radius
+                    Console.Write("Radius (in cm): ");
+                    eingabe = Console.ReadLine();
+                    Radius = Convert.ToInt32(eingabe);
+
+                    //Berechnungen
+                    Umfang = Math.PI * 2 * Radius;
+                    Oberflaeche = 4 * Math.PI * Radius * Radius;
+                    Volumen = 4 / 3 * Math.PI * Radius * Radius * Radius;
+
+                    //Ausgabe
+                    Console.WriteLine("Umfang / Oberflaeche / Volumen = " + Umfang + " cm / " + Oberflaeche + " cm² / " + Volumen + " cm³ / ");
+
+                    Console.Read();
+                }
+            }
+        }
+</pre></code>
+
+<center><p class="blur"></p></center>
+<br  id="art"><br>
+
+      <img src="fdfd.png"><br>
+      <img src="pr56.png"><br>
+      <img src="fdzfdz.png"><br>
+      <img src="dfggfd4.png"><br>
+      <img src="woman at sea.png"><br>
+      <img src="css.png"><br>
+      <img src="nami4.png"><br>
+      <img src="12.png" height=700px><br>
+      <img src="9.png"><br>
+      <img src="beingwild.png"><br>
+      <img src="Document-3.png"><br>
+      <img src="ds.png"><br>
+      <img src="hfhfffhfj3.png"><br>
+      <img src="malick.png"><br>
+      <img src="sfdsfd111.png"><br>
+      <img src="tes.png"><br>
+      <img src="wokgirl.png"><br>
+      <img src="35.png"><br>
+      <img src="51.jpg" width=1120px><br>
+      <img src="fdgfg1.png" width=1120px><br>
+      <img src="8.png"><br><br>
+
+<center><p class="blur"></p></center>
+
+    </div>
+
+</div>
+
+<script>
+$('a[href^="#"]').on('click', function(event) {
+
+    var target = $(this.getAttribute('href'));
+
+    if( target.length ) {
+        event.preventDefault();
+        $('html, body').stop().animate({
+            scrollTop: target.offset().top
+        }, 1000);
+    }
+
+});
+</script>
+
+</body></html>
