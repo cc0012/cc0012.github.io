@@ -1,0 +1,168 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 1380px;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: 'Roboto';
+}
+
+.clearfix {
+  overflow: auto;
+}
+
+.main-nav {
+  height: 150px;
+  padding-top: 30px;
+}
+
+.main-nav-company {
+  float: left;
+  height: auto;
+  font-size: 14px;
+  line-height: 1.8em;
+}
+
+.main-nav-menu {
+  width: 100%;
+}
+
+.main-nav-menu ul {
+  margin-top: 0px;
+  list-style-type: none;
+  display: inline;
+  float: left;
+}
+
+.main-nav-menu li {
+  display: inline;
+  padding-left: 30px;
+  font-size: 14px;
+}
+
+.main-nav-menu a {
+  text-decoration: none;
+  color: black;
+}
+
+.main-nav-menu a:hover {
+  color: #0072bc;
+}
+
+.header-company {
+  padding-left: 310px;
+  background-color: black;
+}
+
+.content {
+  padding-top: 30px;
+  font-size: 20px;
+  max-width: 680px;
+  font-family: 'Roboto';
+}
+
+.bottom-logo {
+  float: right;
+  padding-top: 600px;
+  font-size: 28px;
+}
+
+.background {
+  margin: 0;
+  position: relative;
+  max-width: 800px;
+}
+
+.background img {
+  margin-bottom: 32px;
+}
+
+.overlay {
+  position: absolute;
+  bottom: 50%;
+  right: 25%;
+  left: 25%;
+}
+
+.text {
+  max-width: 680px;
+  line-height: 1.8em;
+  letter-spacing: 2.0px;
+  padding-bottom: 70px;
+}
+
+.transp {
+  position: absolute;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.credit {
+  font-size: 14px;
+  line-height: 1.8em;
+  padding-bottom: 140px;
+}
+
+.credit a {
+  color: black;
+}
+
+.foot {
+  padding-bottom: 64px;
+  max-width: 400px;
+}
+
+.foot ul {
+  padding: 0;
+}
+
+.foot li {
+  font-size: 14px;
+  display: inline;
+}
+
+.pull-left {
+  float: right;
+}
+
+.pull-left span {
+  font-size: 30px;
+}
+
+.main-nav-mobile {
+  display: none;
+}
+
+@media (max-width: 1400px) {
+  .main-nav-menu {
+    width: 50%;
+    float: left;
+    margin-left: 0;
+    padding-left: 0;
+  }
+
+  .background img {
+    width: 100%;
+  }
+
+}
+
+@media (max-width: 800px) {
+  .main-nav-menu {
+    width: 25%;
+    float: left;
+  }
+
+ .text {
+    width: 100%;
+  }
+
+  .credit {
+    width:35%;
+  }
+
+}
