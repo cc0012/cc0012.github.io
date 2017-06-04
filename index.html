@@ -134,13 +134,18 @@ A console game of Battleship (Python)
 # Importing from the random library
 from random import randint
 
-
 # - GAME BOARD
 
 board = []
 
-for i in range (10):
-    board.append(["O "]*10)
+# -- A function that seeds the board with Os
+
+def seed_board(board):
+    for i in range (10):
+        board.append(["O "]*10)
+
+# -- It's not enough to define a function (you obviously have to call it)
+seed_board(board)
 
 # -- defining a function called "print_board", which we then can use like so : print_board(board) with board as an argument for instance
 
@@ -155,7 +160,7 @@ def print_board(board):
         i += 1
     else:
         print str(i+1) + "  x" + ""
-        print("-------------------------------")
+        print "-------------------------------"
 
     # -- horizontal numbers MISSING
 
@@ -182,10 +187,7 @@ print ("")
 
 # - ALLOW THE PLAYER TO GUESS WHERE IT IS
 
-'''
-Python doesn't have do while loops (which is something that became needed out of the flow of the development of this),
-but there is a similar construct :
-'''
+# -- Python doesn't have do while loops (which is something that became needed out of the flow of the development of the app), but there is a similar construct :
 # -- while True:
 # --    do_something()
 # --    if condition()
@@ -201,38 +203,63 @@ while True:
         try:
             guess_row = int(raw_input("Guess Row: "))
             guess_col = int(raw_input("Guess Column: "))
-            print ("")
+            print ""
             user_inputs_numbers = True
         except:
-            print ("Please enter numerical values only. ")
+            print "Please enter numerical values only.\n"
 
 # -- Now we've got our input, but we haven't done anything with it yet.
 
     if guess_row == ship_row and guess_col == ship_col:
-        print "Congratulations, you sank the battleship!"
+        print "Congratulations, you sank the battleship!\n"
         # -- requirement : a succesful hit is saved as -1 in the array
         board[guess_row][guess_col]="-1"
-        break
+
+        print_board(board)
+
+        print "Reseeding...\n"
+
+        board = []
+        seed_board(board)
+
     else:
         if (guess_row < 0 or guess_row > 9) or (guess_col < 0 or guess_col > 9):
             print "Coordinates should be of values 0 to 9."
-        elif board[guess_row][guess_col] == "2":
-            print "You guessed this already"
+            # -- to do : in the multiple ship version it should take into account "-1"
+        elif board[guess_row][guess_col] == "-2":
+            print "You guessed this already.\n"
         else:
-            '''
-            -- you have to specify str() because otherwise it will return that it can't concatenate str and int.
-            There are better ways like % interpolation but not sure it works in python2
-            '''
-            print "Try again. The ship was here: " + str(ship_col) + " [row], " + str(ship_row) + " [column]"
+            # -- unused feature
+            # -- print "Try again. The ship was here: " + str(ship_col) + " [row], " + str(ship_row) + " [column]"
+            # -- you have to specify str() because otherwise it will return that it can't concatenate str and int. There are better ways like % interpolation but not sure it works in python2
+            print "Try again."
             # -- requirement : a hit that landed in the water is saved as -2
             board[guess_row][guess_col]="-2"
+            # -- unused feature
             # -- X is for where the ship actually was
-            board[ship_row][ship_col]="X "
+            # -- board[ship_row][ship_col]="X "
 
             print_board(board)
-            print ("")
+            print ""
 
-# -- Now the problem is that we have multiple -2 entries and the game goes on until you win
+            # -- otherwise the game goes on
+            continue_game = str(raw_input("Do you want to continue? (y / n): "))
+            if continue_game == "n":
+                break
+            elif continue_game == "y":
+                print ""
+            else:
+                print "\nType in 'y' followed by enter to quit, or 'n' to resume the game.\n"
+
+            # -- a = [] is how you create a list, but it's also one way to clear a list.
+            # -- This was another requirement (I thought): that the board be cleared. Update : but in the one ship version, it could be used and should be used when the ship is found
+            # -- board = []
+            # -- seed_board(board)
+
+
+
+
+
 
 # - SHIPS
 # -- (I haven't done anything with that yet)
@@ -258,6 +285,24 @@ numberOfUboot = 4
 numberOfDestroyer = 3
 numberOfCruser = 2
 numberOfBattleship = 1
+
+# - COLORS
+'''
+
+colors = {
+    "green":"\033[92m",
+    "blue":"\033[94m",
+    "red":"\033[91m",
+    "reset":"\033[00m",
+}
+
+# Order matters! If you're going to use ressources, they need to be available before.
+class bcolors:
+    GREEN = '\033[92m'
+    BLUE = '\033[94m'
+
+'''
+
 
 </pre></code>
         
