@@ -187,7 +187,8 @@ print ("")
 
 # - ALLOW THE PLAYER TO GUESS WHERE IT IS
 
-# -- Python doesn't have do while loops (which is something that became needed out of the flow of the development of the app), but there is a similar construct :
+# -- Python doesn't have do while loops (which is something that became needed out of the flow of the development of the app),
+# but there is a similar construct :
 # -- while True:
 # --    do_something()
 # --    if condition()
@@ -231,7 +232,8 @@ while True:
         else:
             # -- unused feature
             # -- print "Try again. The ship was here: " + str(ship_col) + " [row], " + str(ship_row) + " [column]"
-            # -- you have to specify str() because otherwise it will return that it can't concatenate str and int. There are better ways like % interpolation but not sure it works in python2
+            # -- you have to specify str() because otherwise it will return that it can't concatenate str and int.
+            # There are better ways like % interpolation but not sure it works in python2
             print "Try again."
             # -- requirement : a hit that landed in the water is saved as -2
             board[guess_row][guess_col]="-2"
