@@ -135,30 +135,6 @@ A console game of Battleship (Python)
 from random import randint
 
 
-# - SHIPS
-
-maxNumberOfShips = 10
-
-# -- this creates a class with various properties
-class ship(object):
-    def __init__(self, ship_length, ship_name, sunk):
-        self.shipLength = ship_length
-        self.shipName = ship_name
-        self.sunk = sunk
-
-# -- this creates instances of ship
-ships = {
-    ship(2, "Uboot", False),
-    ship(3, "Destroyer", False),
-    ship(4, "Cruser", False),
-    ship(5, "Battleship", False),
-}
-
-numberOfUboot = 4
-numberOfDestroyer = 3
-numberOfCruser = 2
-numberOfBattleship = 1
-
 # - GAME BOARD
 
 board = []
@@ -205,34 +181,81 @@ print_board(board)
 print ("")
 
 # - ALLOW THE PLAYER TO GUESS WHERE IT IS
-guess_row = int(raw_input("Guess Row: "))
-guess_col = int(raw_input("Guess Column: "))
-print ("")
+
+# -- Python doesn't have do while loops (which is something that became needed out of the flow of the development of this), but there is a similar construct :
+# -- while True:
+# --    do_something()
+# --    if condition()
+# --        break
+
+while True:
+
+    # -- If a user enters a letter for instance, the console throws back an error ("invalid literal for int() with base 10: 'b')
+    # -- If you add a measure for catching errors (try), it will in this case print the message we want but still throw back the error after.
+    # -- Then I added the guess_row stuff again under the print message...
+    user_inputs_numbers = False
+    while user_inputs_numbers == False:
+        try:
+            guess_row = int(raw_input("Guess Row: "))
+            guess_col = int(raw_input("Guess Column: "))
+            print ("")
+            user_inputs_numbers = True
+        except:
+            print ("Please enter numerical values only. ")
 
 # -- Now we've got our input, but we haven't done anything with it yet.
 
-if guess_row == ship_row and guess_col == ship_col:
-    print "Congratulations, you sank the battleship!"
-    # -- requirement : a succesful hit is saved as -1 in the array
-    board[guess_row][guess_col]="-1"
-else:
-    if (guess_row < 0 or guess_row > 9) or (guess_col < 0 or guess_col > 9):
-        print "Coordinates should be of values 0 to 9."
-    elif board[guess_row][guess_col] == "2":
-        print "You guessed this already"
+    if guess_row == ship_row and guess_col == ship_col:
+        print "Congratulations, you sank the battleship!"
+        # -- requirement : a succesful hit is saved as -1 in the array
+        board[guess_row][guess_col]="-1"
+        break
     else:
-    '''
-    -- you have to specify str() because otherwise it will return that it can't concatenate str and int.
-    There are better ways like % interpolation but not sure it works in python2
-    '''
-        print "Try again. The ship was here: " + str(ship_col) + " [row], " + str(ship_row) + " [column]"
-        # -- requirement : a hit that landed in the water is saved as -2
-        board[guess_row][guess_col]="-2"
-        # -- X is for where the ship actually was
-        board[ship_row][ship_col]="X "
+        if (guess_row < 0 or guess_row > 9) or (guess_col < 0 or guess_col > 9):
+            print "Coordinates should be of values 0 to 9."
+        elif board[guess_row][guess_col] == "2":
+            print "You guessed this already"
+        else:
+            '''
+            # -- you have to specify str() because otherwise it will return that it can't concatenate str and int.
+            There are better ways like % interpolation but not sure it works in python2
+            '''
+            print "Try again. The ship was here: " + str(ship_col) + " [row], " + str(ship_row) + " [column]"
+            # -- requirement : a hit that landed in the water is saved as -2
+            board[guess_row][guess_col]="-2"
+            # -- X is for where the ship actually was
+            board[ship_row][ship_col]="X "
 
-        print_board(board)
-        print ("")
+            print_board(board)
+            print ("")
+
+# -- Now the problem is that we have multiple -2 and that the evil game goes on... forever!
+
+# - SHIPS
+# -- (I haven't done anything with that yet)
+
+maxNumberOfShips = 10
+
+# -- this creates a class with various properties
+class ship(object):
+    def __init__(self, ship_length, ship_name, sunk):
+        self.shipLength = ship_length
+        self.shipName = ship_name
+        self.sunk = sunk
+
+# -- this creates instances of ship
+ships = {
+    ship(2, "Uboot", False),
+    ship(3, "Destroyer", False),
+    ship(4, "Cruser", False),
+    ship(5, "Battleship", False),
+}
+
+numberOfUboot = 4
+numberOfDestroyer = 3
+numberOfCruser = 2
+numberOfBattleship = 1
+
 </pre></code>
         
 <center><p class="blur"></p></center>
