@@ -17,6 +17,17 @@ p a { color: white; font-weight: bold; background-color: orange; text-decoration
   width: 125px;
 }
 
+.new {
+  padding-left: 120px;
+  max-width: 100% !important;
+}
+
+.image-border {
+  border: solid;
+  border-color: darkgrey;
+  border-width: thin;
+}
+
 .menu li {
   display: inline;
   padding-right: 20px;
@@ -69,10 +80,8 @@ li { display: table-cell; font-weight: bold; width: 1%; }
     overflow: hidden;
     position: relative;
     border-radius: 50%;
+}
 
-
-    background: lightBrown;
-
-html {
-background-color:#7c6c89;
+code {
+  background-color: beige;
 }
