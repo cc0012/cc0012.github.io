@@ -182,8 +182,10 @@ print ("")
 
 # - ALLOW THE PLAYER TO GUESS WHERE IT IS
 
-# -- Python doesn't have do while loops (which is something that became needed out of the flow of the development of this),
-     but there is a similar construct :
+'''
+Python doesn't have do while loops (which is something that became needed out of the flow of the development of this),
+but there is a similar construct :
+'''
 # -- while True:
 # --    do_something()
 # --    if condition()
@@ -218,7 +220,7 @@ while True:
             print "You guessed this already"
         else:
             '''
-            # -- you have to specify str() because otherwise it will return that it can't concatenate str and int.
+            -- you have to specify str() because otherwise it will return that it can't concatenate str and int.
             There are better ways like % interpolation but not sure it works in python2
             '''
             print "Try again. The ship was here: " + str(ship_col) + " [row], " + str(ship_row) + " [column]"
