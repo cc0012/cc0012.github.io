@@ -1,0 +1,27 @@
+
+body {
+background-color: white;
+font-family: monospace!important;
+}
+div#board {
+width: auto;
+height: auto;
+}
+
+form {
+  padding-bottom: 20px;
+}
+
+td {
+  background-color: lightgrey;
+  width: 52px;
+  height: 52px;
+}
+
+.hit {
+  background-color: red;
+}
+
+.miss {
+  background-color: grey;
+}
